@@ -31,7 +31,12 @@ public class HomePage {
 	
 	@FindBy(xpath="//img[@src=\"themes/softed/images/user.PNG\"]")
 	private WebElement administratorIcon;
+	@FindBy(linkText="Products")
+	private WebElement productslink;
 	
+	public WebElement getProductslink() {
+		return productslink;
+	}
 	@FindBy(xpath="//a[text()='Sign Out']")
 	private WebElement signOutLink;
 	@FindBy(xpath = "//a[@href=\"/books\"]")
