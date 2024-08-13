@@ -13,6 +13,9 @@ public class ProductsPage {
 	@FindBy(name="search")
 	private WebElement search;
 	
+	@FindBy(name="search1")
+	private WebElement search1;
+	
 	public ProductsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
