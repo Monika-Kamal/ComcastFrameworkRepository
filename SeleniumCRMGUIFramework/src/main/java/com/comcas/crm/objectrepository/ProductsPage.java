@@ -13,6 +13,9 @@ public class ProductsPage {
 	@FindBy(name="searcBtn")
 	private WebElement searchButton;
 	
+	@FindBy(name="searcBtn2")
+	private WebElement searchButton2;
+	
 	public ProductsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
