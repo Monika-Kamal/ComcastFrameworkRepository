@@ -10,6 +10,9 @@ public class ProductsPage {
 	@FindBy(xpath="//img[@alt='Create Product...']")
 	private WebElement createProductLink;
 	
+	@FindBy(name="searcBtn")
+	private WebElement searchButton;
+	
 	public ProductsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
