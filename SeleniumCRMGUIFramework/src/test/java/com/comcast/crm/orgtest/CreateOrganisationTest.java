@@ -7,13 +7,13 @@ import org.openqa.selenium.WebElement;
 
 import org.testng.annotations.Test;
 
-
+import com.aventstack.extentreports.Status;
 import com.comcas.crm.objectrepository.CreateNewOrganizationPage;
 import com.comcas.crm.objectrepository.HomePage;
 
 import com.comcas.crm.objectrepository.OrganizationInfoPage;
 import com.comcas.crm.objectrepository.OrganizationsPage;
-
+import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.crm.comcast.baseUtility.BaseClass;
 //@Listeners(com.comcasrt.crm.listnerUtility.ListnerImplementationClass.class)
 public class CreateOrganisationTest extends BaseClass {
@@ -22,22 +22,22 @@ public class CreateOrganisationTest extends BaseClass {
 	public void createNewOrg() throws EncryptedDocumentException, IOException, Throwable {
 
 		// Inorder to having the low level report we need to add logs for each teststep
-		//UtilityClassObject.getTest().log(Status.INFO, "read data from excel file");
+		UtilityClassObject.getTest().log(Status.INFO, "read data from excel file");
 		String orgName = eLib.getdataFromExcel("organisation", 4, 2) + jLib.getRandomNumber();
 
 		System.out.println(orgName);
-		//UtilityClassObject.getTest().log(Status.INFO, "navigate to home page");
+		UtilityClassObject.getTest().log(Status.INFO, "navigate to home page");
 		HomePage hp = new HomePage(driver);
 		hp.getOrganisationlink().click();
-		//UtilityClassObject.getTest().log(Status.INFO, "navigate to org page");
+		UtilityClassObject.getTest().log(Status.INFO, "navigate to home page");
 		OrganizationsPage op = new OrganizationsPage(driver);
 		op.createOrganisation();
-		//UtilityClassObject.getTest().log(Status.INFO, "create org page");
+		UtilityClassObject.getTest().log(Status.INFO, "create org page");
 		CreateNewOrganizationPage co = new CreateNewOrganizationPage(driver);
 		co.createNewOrganisation(orgName);
 
 		Thread.sleep(2000);
-		//UtilityClassObject.getTest().log(Status.INFO, "org created");
+		UtilityClassObject.getTest().log(Status.INFO, "org created");
 		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
 		String headerinfo = oip.getHeaderinfo().getText();
 
