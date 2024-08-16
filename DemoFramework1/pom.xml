@@ -97,7 +97,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!-- TestNG suite XML files -->
-						<suiteXmlFile>testng_RT.xmll</suiteXmlFile>
+						<suiteXmlFile>testng_RT.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
